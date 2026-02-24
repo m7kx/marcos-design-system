@@ -1,6 +1,6 @@
 import StyleDictionary from 'style-dictionary'
 
-const sd = new StyleDictionary({
+const sd = StyleDictionary.extend({
   source: ['src/**/*.json'],
   platforms: {
     css: {

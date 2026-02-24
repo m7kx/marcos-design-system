@@ -1,6 +1,7 @@
 {
   "name": "@marcos-ds/tokens",
   "version": "0.1.0",
+  "type": "module",
   "description": "Design tokens — source of truth for all marcos design system projects",
   "main": "./output/js/tokens.js",
   "types": "./output/js/tokens.d.ts",
