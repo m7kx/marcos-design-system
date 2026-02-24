@@ -1,6 +1,5 @@
-import StyleDictionary from 'style-dictionary'
-
-const sd = new StyleDictionary({
+/** @type {import('style-dictionary').Config} */
+export default {
   source: ['src/**/*.json'],
   platforms: {
     css: {
@@ -42,6 +41,4 @@ const sd = new StyleDictionary({
       ],
     },
   },
-})
-
-await sd.buildAllPlatforms()
+}
