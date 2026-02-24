@@ -1,0 +1,20 @@
+{
+  "name": "@marcos-ds/tokens",
+  "version": "0.1.0",
+  "description": "Design tokens — source of truth for all marcos design system projects",
+  "main": "./output/js/tokens.js",
+  "types": "./output/js/tokens.d.ts",
+  "exports": {
+    ".": "./output/js/tokens.js",
+    "./css": "./output/css/variables.css",
+    "./json": "./output/json/tokens.json"
+  },
+  "scripts": {
+    "build": "style-dictionary build --config style-dictionary.config.js",
+    "dev": "style-dictionary build --config style-dictionary.config.js --watch"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.3.0"
+  },
+  "files": ["output"]
+}
