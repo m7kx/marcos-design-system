@@ -28,7 +28,7 @@ const sd = new StyleDictionary({
         },
         {
           destination: 'tokens.d.ts',
-          format: 'typescript/esm-declarations',
+          format: 'typescript/module-declarations',
         },
       ],
     },
