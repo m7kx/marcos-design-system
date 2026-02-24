@@ -1,0 +1,28 @@
+{
+  "color": {
+    "brand": {
+      "primary":   { "$value": "{color.gold.400}", "$type": "color" },
+      "secondary": { "$value": "{color.gold.600}", "$type": "color" },
+      "muted":     { "$value": "{color.gold.100}", "$type": "color" }
+    },
+    "text": {
+      "primary":   { "$value": "{color.neutral.950}", "$type": "color" },
+      "secondary": { "$value": "{color.neutral.600}", "$type": "color" },
+      "muted":     { "$value": "{color.neutral.400}", "$type": "color" },
+      "inverse":   { "$value": "{color.neutral.0}",   "$type": "color" },
+      "brand":     { "$value": "{color.gold.400}",    "$type": "color" }
+    },
+    "bg": {
+      "primary":   { "$value": "{color.neutral.0}",   "$type": "color" },
+      "secondary": { "$value": "{color.neutral.50}",  "$type": "color" },
+      "elevated":  { "$value": "{color.neutral.100}", "$type": "color" },
+      "brand":     { "$value": "{color.gold.400}",    "$type": "color" },
+      "dark":      { "$value": "{color.neutral.950}", "$type": "color" }
+    },
+    "border": {
+      "default": { "$value": "{color.neutral.200}", "$type": "color" },
+      "muted":   { "$value": "{color.neutral.100}", "$type": "color" },
+      "brand":   { "$value": "{color.gold.400}",    "$type": "color" }
+    }
+  }
+}
