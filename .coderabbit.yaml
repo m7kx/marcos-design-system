@@ -1,0 +1,23 @@
+language: "pt-BR"
+tone_instructions: "Seja objetivo e técnico. Priorize issues reais de qualidade, segurança e arquitetura. Evite comentários triviais de estilo."
+reviews:
+  profile: "chill"
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: false
+  path_instructions:
+    - path: "packages/tokens/**"
+      instructions: "Pacote usa Style Dictionary v4. Verificar: (1) config usa pure export default sem imports de StyleDictionary e sem buildAllPlatforms(); (2) tokens seguem estrutura 3 camadas Primitive → Semantic → Component; (3) prefixo --mds- nos CSS custom properties; (4) ADR-0005: motion primitives ficam aqui, animações específicas de projeto NÃO. Após build, rodar: pnpm --filter @marcos-ds/tokens test"
+    - path: "docs/adr/**"
+      instructions: "ADRs são imutáveis após aprovação. Verificar: (1) tem YAML frontmatter com status; (2) segue template padrão; (3) não modifica ADRs já aprovados — deve criar novo ADR supersedendo o anterior."
+    - path: "**/__tests__/**"
+      instructions: "Testes de tokens devem usar validação baseada em contratos (verifica se estrutura existe, CSS :root presente, prefixo --mds-) ao invés de valores hex específicos, para evitar testes frágeis que quebram em mudanças de valor."
+    - path: "CHANGELOG.md"
+      instructions: "Verificar se segue formato Keep a Changelog. Mudanças categorizadas em Added, Changed, Fixed, Removed."
+chat:
+  auto_reply: true
