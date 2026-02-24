@@ -1,44 +1,47 @@
-/** @type {import('style-dictionary').Config} */
 export default {
-  source: ['src/**/*.json'],
+  source: ["src/**/*.json"],
   platforms: {
     css: {
-      transformGroup: 'css',
-      prefix: 'mds',
-      buildPath: 'output/css/',
+      transformGroup: "css",
+      prefix: "mds",
+      buildPath: "output/css/",
       files: [
         {
-          destination: 'variables.css',
-          format: 'css/variables',
-          options: {
-            selector: ':root',
-            outputReferences: true,
-          },
-        },
-      ],
+          destination: "variables.css",
+          format: "css/variables",
+          options: { outputReferences: false }
+        }
+      ]
     },
     js: {
-      transformGroup: 'js',
-      buildPath: 'output/js/',
+      transformGroup: "js",
+      buildPath: "output/js/",
       files: [
         {
-          destination: 'tokens.js',
-          format: 'javascript/esm',
-        },
+          destination: "tokens.js",
+          format: "javascript/es6"
+        }
+      ]
+    },
+    ts: {
+      transformGroup: "js",
+      buildPath: "output/js/",
+      files: [
         {
-          destination: 'tokens.d.ts',
-          format: 'typescript/module-declarations',
-        },
-      ],
+          destination: "tokens.d.ts",
+          format: "typescript/module-declarations"
+        }
+      ]
     },
     json: {
-      buildPath: 'output/json/',
+      transformGroup: "js",
+      buildPath: "output/json/",
       files: [
         {
-          destination: 'tokens.json',
-          format: 'json/nested',
-        },
-      ],
-    },
-  },
+          destination: "tokens.json",
+          format: "json/nested"
+        }
+      ]
+    }
+  }
 }

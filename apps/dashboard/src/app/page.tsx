@@ -6,7 +6,7 @@ export default function HomePage() {
       {/* Hero */}
       <div className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--mds-color-brand-primary)] text-[var(--mds-color-brand-primary)] text-xs font-medium">
-          v0.1.0 — Fase 1 completa
+          v0.2.0 — Fase 2 completa
         </div>
         <h1 className="text-4xl font-bold tracking-tight text-[var(--mds-color-text-primary)]">
           marcos-design-system
@@ -23,10 +23,10 @@ export default function HomePage() {
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: "Token layers",    value: "3" },
-          { label: "Primitive tokens", value: "60+" },
-          { label: "Components",      value: "1" },
-          { label: "Integrations",    value: "VivAir" },
+          { label: "Token layers",      value: "3"      },
+          { label: "Primitive tokens",  value: "70+"    },
+          { label: "Components",        value: "1"      },
+          { label: "Integrations",      value: "VivAir" },
         ].map((s) => (
           <div
             key={s.label}
@@ -45,10 +45,14 @@ export default function HomePage() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {[
-            { href: "/foundations/colors",   title: "Colors",      desc: "Paleta completa com swatches e tokens" },
-            { href: "/foundations/typography", title: "Typography", desc: "Escala tipográfica com preview ao vivo" },
-            { href: "/foundations/spacing",  title: "Spacing",     desc: "Grid de espaçamento visual" },
-            { href: "/tokens",               title: "Token Explorer", desc: "Todos os tokens com copy de CSS var" },
+            { href: "/foundations/colors",     title: "Colors",         desc: "Paleta gold + neutral com swatches interativos e copy"  },
+            { href: "/foundations/typography",  title: "Typography",     desc: "Escala tipográfica com live preview editável"            },
+            { href: "/foundations/spacing",     title: "Spacing",        desc: "Grid de espaçamento visual com régua"                   },
+            { href: "/foundations/motion",      title: "Motion",         desc: "Primitives: duration, easing, spring — demos ao vivo"   },
+            { href: "/foundations/radius",      title: "Border Radius",  desc: "Escala de border-radius com preview"                    },
+            { href: "/foundations/shadows",     title: "Shadows",        desc: "Escala de sombras com box-shadow ao vivo"               },
+            { href: "/tokens",                  title: "Token Explorer", desc: "70+ tokens com busca, filtro por categoria e copy"      },
+            { href: "/integrations",            title: "VivAir",         desc: "Guia de integração: install, CSS vars, motion, semver"  },
           ].map((item) => (
             <a
               key={item.href}
