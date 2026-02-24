@@ -1,0 +1,24 @@
+@import "@marcos-ds/tokens/css";
+@import "tailwindcss";
+
+:root {
+  --font-inter: Inter, system-ui, sans-serif;
+}
+
+/* Dark mode token overrides */
+.dark {
+  --mds-color-bg-primary: var(--mds-color-neutral-950);
+  --mds-color-bg-secondary: var(--mds-color-neutral-900);
+  --mds-color-bg-elevated: var(--mds-color-neutral-800);
+  --mds-color-text-primary: var(--mds-color-neutral-0);
+  --mds-color-text-secondary: var(--mds-color-neutral-300);
+  --mds-color-text-muted: var(--mds-color-neutral-500);
+  --mds-color-border-default: var(--mds-color-neutral-800);
+  --mds-color-border-muted: var(--mds-color-neutral-900);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--mds-color-border-default); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--mds-color-text-muted); }
