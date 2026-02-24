@@ -1,0 +1,11 @@
+{
+  "name": "@marcos-ds/config",
+  "version": "0.1.0",
+  "description": "Shared configs: ESLint, TypeScript, Tailwind",
+  "exports": {
+    "./eslint": "./eslint/index.js",
+    "./typescript/base": "./typescript/base.json",
+    "./typescript/nextjs": "./typescript/nextjs.json",
+    "./tailwind": "./tailwind/index.js"
+  }
+}
