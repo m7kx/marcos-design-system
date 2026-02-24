@@ -1,6 +1,6 @@
 import StyleDictionary from 'style-dictionary'
 
-const sd = StyleDictionary.extend({
+const sd = new StyleDictionary({
   source: ['src/**/*.json'],
   platforms: {
     css: {
@@ -44,4 +44,4 @@ const sd = StyleDictionary.extend({
   },
 })
 
-sd.buildAllPlatforms()
+await sd.buildAllPlatforms()
