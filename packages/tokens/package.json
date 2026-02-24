@@ -2,7 +2,7 @@
   "name": "@marcos-ds/tokens",
   "version": "0.1.0",
   "type": "module",
-  "description": "Design tokens — source of truth for all marcos design system projects",
+  "description": "Design tokens \u2014 source of truth for all marcos design system projects",
   "main": "./output/js/tokens.js",
   "types": "./output/js/tokens.d.ts",
   "exports": {
@@ -12,10 +12,18 @@
   },
   "scripts": {
     "build": "style-dictionary build --config style-dictionary.config.js",
-    "dev": "style-dictionary build --config style-dictionary.config.js --watch"
+    "dev": "style-dictionary build --config style-dictionary.config.js --watch",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "style-dictionary": "^4.3.0"
   },
-  "files": ["output"]
+  "files": [
+    "output"
+  ],
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  }
 }

@@ -6,9 +6,14 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "type-check": "turbo run type-check",
-    "tokens:build": "pnpm --filter @marcos-ds/tokens build"
+    "test": "turbo run test",
+    "tokens:build": "pnpm --filter @marcos-ds/tokens build",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.11",
     "turbo": "^2.3.3",
     "typescript": "^5.7.3"
   },
