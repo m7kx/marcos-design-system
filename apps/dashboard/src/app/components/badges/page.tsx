@@ -1,4 +1,5 @@
 "use client"
+import type { ReactNode } from 'react'
 import { PageHeader } from "@/components/page-header"
 import { ComponentPreview, PropsTable } from "@/components/component-preview"
 
@@ -8,7 +9,7 @@ function Badge({
   className = "",
 }: {
   variant?: "default" | "secondary" | "outline" | "success" | "warning" | "error" | "info"
-  children: React.ReactNode
+  children: ReactNode
   className?: string
 }) {
   const base = "inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-xs font-medium"
@@ -26,7 +27,7 @@ function Badge({
 
 const BADGE_PROPS = [
   { name: "variant", type: '"default" | "secondary" | "outline" | "success" | "warning" | "error" | "info"', default: '"default"', description: "Visual style" },
-  { name: "children", type: "React.ReactNode", required: true, description: "Badge content" },
+  { name: "children", type: "ReactNode", required: true, description: "Badge content" },
   { name: "className", type: "string", description: "Additional CSS classes" },
 ]
 

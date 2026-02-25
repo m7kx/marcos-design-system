@@ -9,10 +9,8 @@ function Ticker({ items, speed = "30s" }: { items: string[]; speed?: string }) {
   return (
     <div className="overflow-hidden">
       <div
-        className="flex gap-8 whitespace-nowrap"
-        style={{
-          animation: `ticker ${speed} linear infinite`,
-        }}
+        className="flex gap-8 whitespace-nowrap animate-ticker"
+        style={{ animationDuration: speed }}
       >
         {doubled.map((item, i) => (
           <span key={i} className="text-sm font-medium text-[var(--mds-color-text-muted)] shrink-0 px-4 py-2 border border-[var(--mds-color-border-default)] rounded-full">
@@ -20,18 +18,12 @@ function Ticker({ items, speed = "30s" }: { items: string[]; speed?: string }) {
           </span>
         ))}
       </div>
-      <style jsx>{`
-        @keyframes ticker {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
-        }
-      `}</style>
     </div>
   )
 }
 
 const code = `// CSS animation — no Framer Motion needed
-// Uses duration.glacial (1200ms) reference for loop timing
+// @keyframes ticker is defined in globals.css
 
 const PARTNERS = ["NCL", "MSC Cruises", "Club Med", "Civitatis", ...]
 
@@ -41,8 +33,8 @@ function Ticker({ items }: { items: string[] }) {
   return (
     <div className="overflow-hidden">
       <div
-        className="flex gap-8 whitespace-nowrap"
-        style={{ animation: "ticker 30s linear infinite" }}
+        className="flex gap-8 whitespace-nowrap animate-ticker"
+        style={{ animationDuration: "30s" }}
       >
         {doubled.map((item, i) => (
           <span key={i}>{item}</span>
@@ -52,10 +44,13 @@ function Ticker({ items }: { items: string[] }) {
   )
 }
 
-// In globals.css:
+// globals.css:
 // @keyframes ticker {
 //   from { transform: translateX(0); }
 //   to   { transform: translateX(-50%); }
+// }
+// .animate-ticker {
+//   animation: ticker linear infinite;
 // }`
 
 export default function TickerPage() {
@@ -74,7 +69,7 @@ export default function TickerPage() {
       </div>
 
       <div className="p-3 rounded-lg border border-[var(--mds-color-border-default)] bg-[var(--mds-color-bg-secondary)] text-xs text-[var(--mds-color-text-muted)]">
-        Duplique o array para criar loop seamless. Ajuste a duração para controlar a velocidade — items mais curtos = menos tempo.
+        Duplique o array para criar loop seamless. Ajuste <code className="font-mono text-[var(--mds-color-brand-primary)]">animationDuration</code> para controlar a velocidade.
       </div>
 
       <pre className="p-4 rounded-xl border border-[var(--mds-color-border-default)] bg-[var(--mds-color-bg-secondary)] text-xs font-mono text-[var(--mds-color-text-secondary)] overflow-x-auto">

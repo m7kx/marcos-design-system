@@ -1,4 +1,5 @@
 "use client"
+import type { ReactNode } from 'react'
 import { useState } from "react"
 import { CopyButton } from "./copy-button"
 
@@ -6,7 +7,7 @@ interface ComponentPreviewProps {
   title: string
   description?: string
   code: string
-  children: React.ReactNode
+  children: ReactNode
   theme?: "light" | "dark" | "both"
 }
 

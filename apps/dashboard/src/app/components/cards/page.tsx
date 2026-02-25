@@ -1,23 +1,24 @@
 "use client"
+import type { ReactNode } from 'react'
 import { PageHeader } from "@/components/page-header"
 import { ComponentPreview, PropsTable } from "@/components/component-preview"
 
-function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function Card({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`rounded-xl border border-[var(--mds-color-border-default)] bg-[var(--mds-color-bg-secondary)] text-[var(--mds-color-text-primary)] ${className}`}>{children}</div>
 }
-function CardHeader({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function CardHeader({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`flex flex-col space-y-1.5 p-6 ${className}`}>{children}</div>
 }
-function CardTitle({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function CardTitle({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <h3 className={`text-base font-semibold leading-none tracking-tight ${className}`}>{children}</h3>
 }
-function CardDescription({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function CardDescription({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <p className={`text-sm text-[var(--mds-color-text-muted)] ${className}`}>{children}</p>
 }
-function CardContent({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function CardContent({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`p-6 pt-0 ${className}`}>{children}</div>
 }
-function CardFooter({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function CardFooter({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`flex items-center p-6 pt-0 gap-3 ${className}`}>{children}</div>
 }
 

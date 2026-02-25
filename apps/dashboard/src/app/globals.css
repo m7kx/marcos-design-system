@@ -22,3 +22,12 @@
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--mds-color-border-default); border-radius: 9999px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--mds-color-text-muted); }
+
+/* Motion Catalog: Ticker animation */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker linear infinite;
+}

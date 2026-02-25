@@ -1,4 +1,5 @@
 "use client"
+import type { ReactNode, ChangeEvent } from 'react'
 import { useState } from "react"
 import { PageHeader } from "@/components/page-header"
 import { ComponentPreview, PropsTable } from "@/components/component-preview"
@@ -6,9 +7,9 @@ import { ComponentPreview, PropsTable } from "@/components/component-preview"
 function Input({
   label, error, hint, prefix, suffix, className = "", type = "text", placeholder, disabled, defaultValue, value, onChange,
 }: {
-  label?: string; error?: string; hint?: string; prefix?: React.ReactNode; suffix?: React.ReactNode
+  label?: string; error?: string; hint?: string; prefix?: ReactNode; suffix?: ReactNode
   className?: string; type?: string; placeholder?: string; disabled?: boolean; defaultValue?: string
-  value?: string; onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  value?: string; onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }) {
   const base = "flex h-10 w-full rounded-md border bg-[var(--mds-color-bg-secondary)] px-3 py-2 text-sm text-[var(--mds-color-text-primary)] placeholder:text-[var(--mds-color-text-muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--mds-color-brand-primary)] disabled:cursor-not-allowed disabled:opacity-50 transition-shadow"
   const borderClass = error ? "border-red-500 focus-visible:ring-red-500" : "border-[var(--mds-color-border-default)]"
@@ -54,8 +55,8 @@ const INPUT_PROPS = [
   { name: "label",       type: "string",         description: "Label exibido acima do input"                   },
   { name: "error",       type: "string",         description: "Mensagem de erro — troca border para vermelho"  },
   { name: "hint",        type: "string",         description: "Texto de ajuda abaixo (oculto se houver error)" },
-  { name: "prefix",      type: "React.ReactNode", description: "Elemento à esquerda (ícone, símbolo)"          },
-  { name: "suffix",      type: "React.ReactNode", description: "Elemento à direita (ícone, botão)"             },
+  { name: "prefix",      type: "ReactNode", description: "Elemento à esquerda (ícone, símbolo)"          },
+  { name: "suffix",      type: "ReactNode", description: "Elemento à direita (ícone, botão)"             },
   { name: "disabled",    type: "boolean",        default: "false", description: "Desabilita interação"        },
   { name: "type",        type: "string",         default: '"text"', description: "Tipo HTML nativo do input"  },
 ]

@@ -1,4 +1,5 @@
 "use client"
+import type { ReactNode } from 'react'
 import { useState } from "react"
 import { PageHeader } from "@/components/page-header"
 import { ComponentPreview, PropsTable } from "@/components/component-preview"
@@ -18,7 +19,7 @@ function Button({
   size?: "sm" | "md" | "lg" | "icon"
   disabled?: boolean
   loading?: boolean
-  children?: React.ReactNode
+  children?: ReactNode
   className?: string
   [k: string]: any
 }) {
