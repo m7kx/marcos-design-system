@@ -140,7 +140,7 @@ export default function InputsPage() {
 
       <div className="p-4 rounded-xl border border-[var(--mds-color-border-default)] bg-[var(--mds-color-bg-secondary)]">
         <div className="text-xs font-medium text-[var(--mds-color-text-muted)]">Import</div>
-        <pre className="text-xs font-mono text-[var(--mds-color-text-secondary)] mt-1">{"import { Input } from "@marcos-ds/ui""}</pre>
+        <pre className="text-xs font-mono text-[var(--mds-color-text-secondary)] mt-1">{'import { Input } from @marcos-ds/ui'}</pre>
       </div>
 
       <div className="space-y-3">
