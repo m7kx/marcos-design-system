@@ -1,4 +1,5 @@
 "use client"
+import React from 'react'
 import type { ReactNode } from 'react'
 import { PageHeader } from "@/components/page-header"
 import { ComponentPreview, PropsTable } from "@/components/component-preview"
@@ -22,10 +23,15 @@ function CardFooter({ children, className = "" }: { children: ReactNode; classNa
   return <div className={`flex items-center p-6 pt-0 gap-3 ${className}`}>{children}</div>
 }
 
-function Button({ children, variant = "primary", size = "md", className = "", ...props }: any) {
-  const v = { primary: "bg-[var(--mds-color-brand-primary)] text-white hover:opacity-90", secondary: "border border-[var(--mds-color-border-default)] text-[var(--mds-color-text-primary)] hover:border-[var(--mds-color-brand-primary)]" }
-  const s = { sm: "h-8 px-3 text-xs", md: "h-9 px-5 text-sm" }
-  return <button className={`inline-flex items-center justify-center rounded-md font-medium transition-all cursor-pointer ${v[variant]} ${s[size]} ${className}`} {...props}>{children}</button>
+function Button({ children, variant = "primary", size = "md", className = "", ...props }: React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  children?: ReactNode; variant?: "primary" | "secondary"; size?: "sm" | "md"; className?: string;
+}) {
+  const v: Record<"primary" | "secondary", string> = {
+    primary: "bg-[var(--mds-color-brand-primary)] text-white hover:opacity-90",
+    secondary: "border border-[var(--mds-color-border-default)] text-[var(--mds-color-text-primary)] hover:border-[var(--mds-color-brand-primary)]",
+  }
+  const s: Record<"sm" | "md", string> = { sm: "h-8 px-3 text-xs", md: "h-9 px-5 text-sm" }
+  return <button className={`inline-flex items-center justify-center rounded-md font-medium transition-all cursor-pointer ${v[variant as keyof typeof v]} ${s[size as keyof typeof s]} ${className}`} {...props}>{children}</button>
 }
 
 const CARD_PARTS = [

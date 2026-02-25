@@ -22,7 +22,7 @@ function Badge({
     error:     "border-red-500/30 bg-red-500/15 text-red-400",
     info:      "border-blue-500/30 bg-blue-500/15 text-blue-400",
   }
-  return <div className={`${base} ${variants[variant]} ${className}`}>{children}</div>
+  return <div className={`${base} ${variants[variant as keyof typeof variants]} ${className}`}>{children}</div>
 }
 
 const BADGE_PROPS = [

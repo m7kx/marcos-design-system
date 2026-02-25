@@ -1,4 +1,5 @@
 "use client"
+import React from 'react'
 import type { ReactNode } from 'react'
 import { useState } from "react"
 import { PageHeader } from "@/components/page-header"
@@ -14,14 +15,12 @@ function Button({
   children,
   className = "",
   ...props
-}: {
+}: React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "ghost" | "destructive"
   size?: "sm" | "md" | "lg" | "icon"
-  disabled?: boolean
   loading?: boolean
   children?: ReactNode
   className?: string
-  [k: string]: any
 }) {
   const base = "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--mds-color-brand-primary)] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer rounded-md"
 
@@ -42,7 +41,7 @@ function Button({
   return (
     <button
       disabled={disabled || loading}
-      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`${base} ${variants[variant as keyof typeof variants]} ${sizes[size as keyof typeof sizes]} ${className}`}
       {...props}
     >
       {loading && (
